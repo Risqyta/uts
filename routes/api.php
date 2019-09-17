@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Http\Request;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+Route::get('mobil','MobilController@index');
+Route::post('mobil','MobilController@create');
+Route::get('/mobil/{id}','MobilController@detail');
+Route::put('/mobil/{id}','MobilController@update');
+Route::delete('/mobil/{id}','MobilController@delete');
